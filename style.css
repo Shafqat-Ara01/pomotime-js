@@ -1,0 +1,280 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #040918 0%, #091540 100%);
+  font-family: "Noto Sans", sans-serif;
+  transition: all 0.3s ease;
+}
+body.light {
+  background: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+}
+/* Smooth transitions when switching themes */
+body,
+.nav-bar,
+.main-heading,
+.timer,
+.timer-heading,
+.custom-label,
+.progress-bg,
+.progress-ring__circle,
+.btn,
+.start-btn,
+.restart-btn {
+  transition: background-color 0.4s ease, color 0.4s ease, stroke 0.4s ease,
+    filter 0.4s ease;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 165, 0, 0.05),
+    transparent 70%
+  );
+  z-index: -1;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+body.light::before {
+  opacity: 0;
+}
+
+.nav-bar {
+  display: flex;
+  background-color: hsl(226, 11%, 37%);
+  padding: 20px 30px;
+  align-items: center;
+}
+body.light .nav-bar {
+  background-color: hsl(200, 60%, 99%);
+}
+.nav-menu {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  list-style: none;
+  align-items: center;
+}
+.brand-name {
+  text-decoration: none;
+  color: orange;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: hsl(226, 25%, 17%);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+body.light .btn {
+  background-color: hsl(217, 61%, 90%);
+  color: black;
+}
+.btn:hover {
+  background-color: hsl(225, 23%, 24%);
+  border: 1px solid orange;
+}
+.btn:focus {
+  outline: none;
+  outline: 2px solid orange;
+  outline-offset: 1px;
+}
+.icon {
+  font-size: 1rem;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.main-heading {
+  color: white;
+  text-align: center;
+  margin-top: 15px;
+  max-width: 600px;
+  transition: all 0.3s ease;
+}
+body.light .main-heading {
+  color: black;
+}
+.main-word {
+  color: orange;
+}
+.timer {
+  font-size: 2rem;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+body.light .timer {
+  color: black;
+}
+.countdown {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.progress-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.blink {
+  animation: blink 1s step-start 4;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.progress-ring__circle {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.3s linear;
+  filter: drop-shadow(0 0 10px orange);
+}
+body.light .progress-ring__circle {
+  filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.5));
+}
+.progress-bg {
+  stroke: #eee;
+  opacity: 0.4;
+}
+body.light .progress-bg {
+  stroke: #ccc;
+  opacity: 0.6;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+.start-btn,
+.restart-btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: none;
+  color: hsl(226, 25%, 17%);
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+body.light .start-btn,
+body.light .restart-btn {
+  background-color: hsl(226, 25%, 17%);
+  color: white;
+}
+.start-btn:hover,
+.restart-btn:hover {
+  border: 1px solid orange;
+}
+.start-btn:focus,
+.restart-btn:focus {
+  outline: none;
+  outline: 2px solid orange;
+  outline-offset: 1px;
+}
+.timer-heading {
+  margin-top: 20px;
+  color: white;
+  max-width: 600px;
+  width: 500px;
+  transition: all 0.3s ease;
+}
+body.light .timer-heading {
+  color: black;
+}
+.form {
+  padding: 20px 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+.custom-label {
+  display: block;
+  color: white;
+  transition: all 0.3s ease;
+}
+body.light .custom-label {
+  color: black;
+}
+.timeInput {
+  padding: 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+}
+.timeInput:focus {
+  outline: none;
+  outline: 2px solid orange;
+  outline-offset: 1px;
+}
+.error-msg {
+  color: red;
+  display: none;
+}
+.set-btn {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background-color: orange;
+  color: hsl(227, 75%, 14%);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.set-btn:hover {
+  color: orange;
+  background-color: hsl(227, 75%, 14%);
+  border: 1px solid orange;
+}
+.set-btn:focus {
+  outline: none;
+  outline: 2px solid orange;
+  outline-offset: 1px;
+}
+
+@media (max-width: 600px) {
+  .main-heading {
+    font-size: 1.7rem;
+  }
+  .timer-heading {
+    text-align: center;
+    width: 300px;
+  }
+}
+@media (max-width: 480px) {
+  .main-heading {
+    font-size: 1.4rem;
+    width: 95%;
+  }
+}
+@media (max-width: 430px) {
+  .main-heading {
+    font-size: 1.1rem;
+  }
+}

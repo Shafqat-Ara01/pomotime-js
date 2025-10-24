@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FocusFlow</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="nav-bar">
+        <ul class="nav-menu">
+          <li class="brand-name">FocusFlow</li>
+          <li>
+            <button class="btn" aria-label="Toggle light or dark mode">
+              <i class="fa-regular fa-sun icon"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <h1 class="main-heading">
+        Set a <span class="main-word">custom timer</span> to stay focused and
+        boost your productivity.
+      </h1>
+      <div class="countdown">
+        <div class="progress-bar">
+          <svg width="250" height="250">
+            <!-- Outer static ring -->
+            <circle
+              class="progress-bg"
+              stroke="#eee"
+              stroke-width="20"
+              fill="transparent"
+              r="100"
+              cx="125"
+              cy="125"
+            />
+
+            <!-- Inner animated ring -->
+            <circle
+              class="progress-ring__circle"
+              stroke="orange"
+              stroke-width="20"
+              fill="transparent"
+              r="100"
+              cx="125"
+              cy="125"
+            />
+          </svg>
+
+          <!-- timer -->
+          <div class="timer">15:00</div>
+        </div>
+        <div class="buttons">
+          <button class="start-btn">
+            <i class="fas fa-play pause" aria-label="Start or pause timer"></i>
+          </button>
+          <button class="restart-btn" aria-label="Restart timer">
+            <i class="fa-solid fa-repeat"></i>
+          </button>
+          <audio src="/tune.wav" class="audio" preload="auto"></audio>
+        </div>
+      </div>
+      <div class="cutom-timer">
+        <h2 class="timer-heading">Set Timer(1 - 90min):</h2>
+        <form class="form">
+          <label for="customTime" class="custom-label">Enter time:</label>
+          <input
+            type="number"
+            name="customTims"
+            class="timeInput"
+            placeholder="e.g. 25"
+            autofocus
+          />
+          <p class="error-msg">Please choose a number from 1 to 90!</p>
+          <button class="set-btn" type="submit">Set</button>
+        </form>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
