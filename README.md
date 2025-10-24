@@ -35,7 +35,7 @@ It helps you focus, stay productive, and manage work sessions with calm simplici
 ---
 
 ##  Preview
-*https://github.com/user-attachments/assets/7c98d3bc-c333-4ad3-ac4d-eee52cce3436*
+https://github.com/user-attachments/assets/7c98d3bc-c333-4ad3-ac4d-eee52cce3436
 
 ---
 
